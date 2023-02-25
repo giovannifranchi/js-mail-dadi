@@ -62,8 +62,8 @@
             <!-- Row -->
             <div class="row">
                 <div class="col d-flex justify-content-center gap-3">
-                    <button type="button" class="btn btn-dark">LogIn</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
+                    <button type="button" class="btn btn-dark" id="login-btn">LogIn</button>
+                    <button type="reset" class="btn btn-warning" id="reset-btn">Reset</button>
                 </div>
             </div>
             <!-- /Row -->
@@ -72,17 +72,42 @@
         <!-- Game Container -->
         <div class="p-5" id="game-container">
             <!-- Row -->
-            <div class="col col-md-6">
-                <div class="player-box">
-
+            <div class="row">
+                <div class="col col-md-6">
+                    <div class="player-box d-flex">
+                        <div class="player-info">
+                            <h3 class="text-reset" id="player-name">fghjk</h3>
+                            <h3 class="text-reset" id="player-lastname"></h3>
+                            <h3 class="text-reset" id="player-email"></h3>
+                        </div>
+                        <div class="player-score">
+                            <img src="img/one.png" alt="" class="img-fluid dice">
+                            <img src="img/two.png" alt="" class="img-fluid dice">
+                            <img src="img/three.png" alt="" class="img-fluid dice">
+                            <img src="img/four.png" alt="" class="img-fluid dice">
+                            <img src="img/five.png" alt="" class="img-fluid dice">
+                            <img src="img/six.png" alt="" class="img-fluid dice">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col col-md-6">
-                <div class="player-box">
-                        
+                <div class="col col-md-6">
+                    <div class="player-box d-flex">
+                        <div class="player-info">
+                            <h3 class="text-reset" id="player-Computer">Computer</h3>
+                        </div>
+                        <div class="player-score">
+                            <img src="img/one.png" alt="" class="img-fluid dice">
+                            <img src="img/two.png" alt="" class="img-fluid dice">
+                            <img src="img/three.png" alt="" class="img-fluid dice">
+                            <img src="img/four.png" alt="" class="img-fluid dice">
+                            <img src="img/five.png" alt="" class="img-fluid dice">
+                            <img src="img/six.png" alt="" class="img-fluid dice">
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /Row -->
+            <h2 class="text-reset text-center m-5" id="winner-text"></h2>
         </div>
         <!-- /Game Container -->
     </div>

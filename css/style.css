@@ -4,3 +4,26 @@ body {
     height: 100vh;
     background-color: #4682b4;
 }
+
+#game-container {
+    display: none;
+}
+
+
+/* 
+-------------
+Player Box 
+-------------
+ */
+
+.player-info {
+    width: 70%;
+}
+
+.player-score {
+    width: 30%;
+}
+
+.dice {
+    display: none;
+}
