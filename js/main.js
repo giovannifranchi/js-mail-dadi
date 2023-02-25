@@ -28,6 +28,13 @@ loginBtn.addEventListener('click', ()=>{
         }
     }else {
         // Enrolled check
+        for(let i = 0; i < enrolled.length; i++){
+            if(enrolled[i] === email.value){
+                isPresent = true;
+                break;
+            }
+        }
+        console.log(isPresent);
     }
 });
 
