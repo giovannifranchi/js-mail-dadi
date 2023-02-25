@@ -16,12 +16,10 @@ Player Box
 -------------
  */
 
-.player-info {
-    width: 70%;
-}
+
 
 .player-score {
-    width: 30%;
+    width: 3.125rem;
 }
 
 .dice {
