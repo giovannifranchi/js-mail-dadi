@@ -21,9 +21,9 @@
     
     <div class="container">
         <h1 class="text-reset text-center m-5">THE DICE GAME</h1>
-        <h2 class="text-reset text-center mb-5">Insert your credential to play</h2>
         <!-- Form -->
-        <form action="">
+        <form action="" id="input-form">
+            <h2 class="text-reset text-center mb-5">Insert your credential to play</h2>
             <!-- Row -->
             <div class="row">
                 <div class="col col-md-6">
@@ -75,13 +75,14 @@
             <!-- Row -->
             <div class="row">
                 <div class="col-12">
-                    <div class="player-box d-flex justify-content-between">
+                    <div class="player-box d-flex justify-content-between mb-5">
                         <div class="player-info">
                             <h3 class="text-reset" id="player-name">fghjk</h3>
                             <h3 class="text-reset" id="player-lastname"></h3>
-                            <h3 class="text-reset" id="player-email"></h3>
+                            <h3 class="text-reset" id="player-Computer">Score: <span class="text-reset" id="human-record"></span></h3>
                         </div>
                         <div class="player-score">
+                            <img src="img/question-mark.png" alt="" class="img-fluid question">
                             <img src="img/one.png" alt="" class="img-fluid dice human">
                             <img src="img/two.png" alt="" class="img-fluid dice human">
                             <img src="img/three.png" alt="" class="img-fluid dice human">
@@ -95,8 +96,10 @@
                     <div class="player-box d-flex justify-content-between">
                         <div class="player-info">
                             <h3 class="text-reset" id="player-Computer">Computer</h3>
+                            <h3 class="text-reset" id="player-Computer">Score: <span class="text-reset" id="computer-record"></span></h3>
                         </div>
                         <div class="player-score">
+                            <img src="img/question-mark.png" alt="" class="img-fluid question">
                             <img src="img/one.png" alt="" class="img-fluid dice computer">
                             <img src="img/two.png" alt="" class="img-fluid dice computer">
                             <img src="img/three.png" alt="" class="img-fluid dice computer">
@@ -108,7 +111,11 @@
                 </div>
             </div>
             <!-- /Row -->
-            <h2 class="text-reset text-center m-5" id="winner-text"></h2>
+            <div class="btn-container d-flex justify-content-center m-5 gap-3">
+                <button type="button" class="btn btn-dark" id="play-btn">Play</button>
+                <button type="button" class="btn btn-dark" id="restart-btn">Restart</button>
+            </div>
+            <h2 class="text-success text-center m-5" id="winner-text"></h2>
         </div>
         <!-- /Game Container -->
     </div>
