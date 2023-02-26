@@ -17,8 +17,12 @@ const questionImg = document.querySelectorAll('.question');
 const humanRecord = document.getElementById('human-record');
 const computerRecord = document.getElementById('computer-record');
 const inputForm = document.getElementById('input-form');
+const playBtn = document.getElementById('play-btn');
+const restartBtn = document.getElementById('restart-btn');
 let humanRecordScore = 0;
 let computerRecordScore = 0;
+let humanScore;
+let computerScore;
 const winnerText = document.getElementById('winner-text');
 const enrolled = ['giovanni.franchi95@gmail.com', 'pinopaolo@hotmail.com', 'davidbowie77@yahoo.com', 'bobdylan@libero.it', 'mariobalotelli@google.it'];
 let isPresent = false;
@@ -56,57 +60,64 @@ loginBtn.addEventListener('click', ()=>{
             humanRecord.innerHTML = humanRecordScore;
             computerRecord.innerHTML = computerRecordScore;
             const playBtn = document.getElementById('play-btn');
-            //Play button Action
-            playBtn.addEventListener('click', ()=>{
-                for(let i = 0; i < questionImg.length; i++){
-                    questionImg[i].style.display = 'none';
-                }
-                for(let i = 0; i < humanDices.length; i++){
-                    humanDices[i].style.display = 'none';
-                }
-                for(let i = 0; i < computerDices.length; i++){
-                    computerDices[i].style.display = 'none';
-                }
-                let humanScore = Math.floor(Math.random()*((humanDices.length - 1) - 0) + 0);
-                let computerScore = Math.floor(Math.random()*((computerDices.length - 1) - 0) + 0);
-                humanDices[humanScore].style.display = 'initial';
-                computerDices[computerScore].style.display = 'initial';
-                if(computerScore === humanScore){
-                    winnerText.innerHTML = 'THIS IS A DRAW';
-                }else if(computerScore > humanScore){
-                    winnerText.innerHTML = 'COMPUTER WON';
-                    computerRecordScore = computerRecordScore + 1;
-                    computerRecord.innerHTML = computerRecordScore;
-                }else {
-                    winnerText.innerHTML = `${userName.value.toUpperCase()} ${userLastName.value.toUpperCase()} WON`;
-                    humanRecordScore = humanRecordScore + 1;
-                    humanRecord.innerHTML = humanRecordScore;
-                }
-            });
-            //Restart button action
-            const restartBtn = document.getElementById('restart-btn');
-            restartBtn.addEventListener('click', ()=>{
-                humanRecordScore = 0;
-                computerRecordScore = 0;
-                playerLastName.innerHTML = '';
-                playerLastName.innerHTML = '';
-                userName.value = '';
-                userLastName.value = '';
-                email.value = '';
-                for(let i = 0; i < humanDices.length; i++){
-                    humanDices[i].style.display = 'none';
-                }
-                for(let i = 0; i < computerDices.length; i++){
-                    computerDices[i].style.display = 'none';
-                }
-                for(let i = 0; i < questionImg.length; i++){
-                    questionImg[i].style.display = 'block';
-                }
-                gameContainer.style.display = 'none';
-                inputForm.style.display = 'block';
-            });
         }
     }
 });
 
+// play button action
+playBtn.addEventListener('click', ()=>{
+    for(let i = 0; i < questionImg.length; i++){
+        questionImg[i].style.display = 'none';
+    }
+    for(let i = 0; i < humanDices.length; i++){
+        humanDices[i].style.display = 'none';
+    }
+    for(let i = 0; i < computerDices.length; i++){
+        computerDices[i].style.display = 'none';
+    }
+    humanScore = Math.floor(Math.random()*((humanDices.length - 1) - 0) + 0);
+    computerScore = Math.floor(Math.random()*((computerDices.length - 1) - 0) + 0);
+    humanDices[humanScore].style.display = 'initial';
+    computerDices[computerScore].style.display = 'initial';
+    if(computerScore === humanScore){
+        winnerText.innerHTML = 'THIS IS A DRAW';
+        winnerText.style.color = 'yellow';
+    }else if(computerScore > humanScore){
+        winnerText.innerHTML = 'COMPUTER WON';
+        winnerText.style.color = 'red';
+        computerRecordScore = computerRecordScore + 1;
+        computerRecord.innerHTML = computerRecordScore;
+    }else {
+        winnerText.innerHTML = `${userName.value.toUpperCase()} ${userLastName.value.toUpperCase()} WON`;
+        winnerText.style.color = 'green';
+        humanRecordScore = humanRecordScore + 1;
+        humanRecord.innerHTML = humanRecordScore;
+    }
+});
 
+
+// restart button action
+restartBtn.addEventListener('click', ()=>{
+    humanRecordScore = 0;
+    computerRecordScore = 0;
+    computerRecord.innerHTML = computerRecordScore;
+    humanRecord.innerHTML = humanRecordScore;
+    playerLastName.innerHTML = '';
+    playerLastName.innerHTML = '';
+    userName.value = '';
+    userLastName.value = '';
+    email.value = '';
+    for(let i = 0; i < humanDices.length; i++){
+        humanDices[i].style.display = 'none';
+    }
+    for(let i = 0; i < computerDices.length; i++){
+        computerDices[i].style.display = 'none';
+    }
+    for(let i = 0; i < questionImg.length; i++){
+        questionImg[i].style.display = 'block';
+    }
+    gameContainer.style.display = 'none';
+    winnerText.innerHTML = '';
+    inputForm.style.display = 'block';
+});
+// Aggiungi colori diversi se vince l'uno o l'altro
